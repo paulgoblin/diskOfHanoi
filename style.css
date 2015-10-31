@@ -1,33 +1,53 @@
+body {
+  font-family: sans-serif;
+}
+
+#header {
+  margin:3vw;
+}
+
 #main{
   border: 1px solid black;
+  border-radius: 5px;
+  background-color: #ddddff
   
+}
+
+#game {
+  width:100vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pane {
   display: inline-block;
   position:relative;
-  border: 1px solid black;
-  width: 30%;
+  border-radius: 5px;
+  /*border: 1px solid black;*/
+  width: 30vw;
   height:400px;
-  background-color: blue;
+  background-color: white;
+  margin: 1vw;
 }
 
 .rod {
+
   position: absolute;
-  border: 1px solid black;
   bottom: 0 ;
-  min-height: 5px;
   width: 100%;
-  background-color: green;
+/*  border: 1px solid black;
+  min-height: 5px;
+  background-color: green;*/
 }
 
 .disk {
   background-color: white;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 5px;
   height: 10px;
   margin: auto
 }
 
 .selected {
-  border: 1px solid white;
+  border: 2px solid white;
 }

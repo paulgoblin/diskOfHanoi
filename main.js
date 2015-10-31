@@ -21,6 +21,13 @@ let init = function() {
 
 let startGame = function(event) {
   numberOfDisks = $('#diskNumInput').val();
+  if (numberOfDisks < 3){
+    $('diskNumInput').val(3)
+    numberOfDisks = 3;
+  } else if (numberOfDisks >10){
+    $('diskNumInput').val(10)
+    numberOfDisks = 30;
+  }
   let diskArr = makeDisks(numberOfDisks, diskSize);
   $('.rod').remove();
   postDisks(diskArr,1);
