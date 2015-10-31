@@ -1,0 +1,32 @@
+#main{
+  border: 1px solid black;
+  
+}
+
+.pane {
+  display: inline-block;
+  position:relative;
+  border: 1px solid black;
+  width: 30%;
+  height:400px;
+  background-color: blue;
+}
+
+.rod {
+  position: absolute;
+  border: 1px solid black;
+  bottom: 0 ;
+  min-height: 5px;
+  width: 100%;
+  background-color: green;}
+
+.disk {
+  background-color: white;
+  border: 1px solid black;
+  height: 10px;
+  margin: auto
+}
+
+.selected {
+  border: 1px solid white;
+}
