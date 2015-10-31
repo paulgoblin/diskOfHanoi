@@ -1,34 +1,28 @@
 'use strict'
 
   let numberOfDisks
-  let diskSize = 20;
 
 let init = function() {
-
-
-
 
   //listen for clicks
   $('.pane').on('click','.disk',selectDisk)
   $('.pane').click(moveSelected)
   $('#start').click(startGame);
 
-
-
-
-
 }
 
 let startGame = function(event) {
+  //get no. of disks and correct it
   numberOfDisks = $('#diskNumInput').val();
   if (numberOfDisks < 3){
     $('diskNumInput').val(3)
     numberOfDisks = 3;
-  } else if (numberOfDisks >10){
-    $('diskNumInput').val(10)
-    numberOfDisks = 30;
+  } else if (numberOfDisks >15){
+    $('diskNumInput').val(15)
+    numberOfDisks = 15;
   }
-  let diskArr = makeDisks(numberOfDisks, diskSize);
+  //make disks and post them to board
+  let diskArr = makeDisks(numberOfDisks);
   $('.rod').remove();
   postDisks(diskArr,1);
   postDisks([],2);
@@ -55,7 +49,7 @@ let moveSelected = function(event) {
 }
 
 let pulseElement = function($el) {
-  $($el).fadeIn(10).fadeOut(10).fadeIn(10).fadeOut(10).fadeIn(10);
+  $($el).fadeIn(20).fadeOut(20).fadeIn(20).fadeOut(20).fadeIn(20);
 }
 
 let checkWinning = function ($pane) {
@@ -88,18 +82,18 @@ let postDisks = function(diskArr,n) {
   return
 }
 
-//makes n disks of initial size. returns array disk divs
-let makeDisks = function (n,size) {
-
+//returns array disk divs
+let makeDisks = function (n) {
+  let size = 3;
   let colorArr = ['red','orange','yellow','green','blue',
   'indigo', 'black'];
   let diskArr = [];
   for (let i = 0; i < n; i++){
     let $diski = $('<div>').addClass('disk');
     $diski.data('size',i);
-    $diski.css({'background-color':colorArr[i%7],'width':size+'px'})
+    $diski.css({'background-color':colorArr[i%7],'width':size+'vw'})
     diskArr.push($diski[0])
-    size += 10;
+    size += 2;
   }
 
   return diskArr;
