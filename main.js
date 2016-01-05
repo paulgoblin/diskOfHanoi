@@ -84,7 +84,7 @@ let postDisks = function(diskArr,n) {
 
 //returns array disk divs
 let makeDisks = function (n) {
-  let size = 3;
+  let size = 6;
   let colorArr = ['red','orange','yellow','green','blue',
   'indigo', 'black'];
   let diskArr = [];
@@ -93,7 +93,7 @@ let makeDisks = function (n) {
     $diski.data('size',i);
     $diski.css({'background-color':colorArr[i%7],'width':size+'vw'})
     diskArr.push($diski[0])
-    size += 2;
+    size += 4;
   }
 
   return diskArr;
